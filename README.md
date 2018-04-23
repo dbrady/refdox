@@ -4,6 +4,8 @@ This is a repository for cheatsheets, reference documentation, notes to myself,
 etc, that I always want no matter what machine I'm on and don't mind having be
 public.
 
+NOTE TO SELF: clone this into ~/Documents/refdox.
+
 ## This is NOT the place for...
 
 This is NOT the place for sensitive, personal, or company private information!

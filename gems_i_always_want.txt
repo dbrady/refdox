@@ -1,0 +1,18 @@
+# grep -v '#' gems_i_always_want.txt | xargs gem install
+bundler
+coderay
+colorize
+columnize
+dicks
+faraday
+figlet
+json
+lolcat
+nyan
+rack
+rake
+serve
+term-ansicolor
+text-table
+thin
+trollop
