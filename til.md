@@ -7,6 +7,12 @@ reforgotten and so on...
 * `man re_format 7` - The full man page documentation for POSIX Regular
   Expressions
 
+## Disk Usage Quick and Easy
+* `du -hs ./*` - Don't use man du and then use -d 1 to trim depth, that ONLY
+  gives you disk usage one layer deep. -s will SUM up the disk space used, and
+  passing ./* means sum up the space for EACH folder involved. The -h is just
+  there to provide human-friendly output (e.g. 700M or 4.1G)
+
 ## Emacs
 * `M-x package-refresh-contents` - This is `apt-get update` for MELPA. Use this
   when `package-install` tells you a package is present but running it fails
