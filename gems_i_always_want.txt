@@ -8,6 +8,8 @@ figlet
 json
 lolcat
 nyan
+pry
+pry-byebug
 rack
 rake
 serve
