@@ -1,6 +1,6 @@
 # When Ctrl-P (or C-p) Doesn't Work
 
-tl;dr Add "detachKeys" : "C-\\,C-q" to ~/.docker/config.json
+tl;dr Add "detachKeys" : "ctrl-\\,q" to ~/.docker/config.json
 
 ## Problem
 
@@ -10,23 +10,23 @@ Or, If You're Starting To Catch On: When you hit Ctrl-p, the prompt _does_ seem 
 
 ## Explanation
 
-It's not you, it's Docker. It captures C-p C-q to allow detaching, which could be SUPER useful if you weren't already running it from inside tmux. You may use that C-p C-e works
+It's not you, it's Docker. It captures C-p q to allow detaching, which could be SUPER useful if you weren't already running it from inside tmux. You may use that C-p C-e works
 
 ## Solution
 
-tl;dr Add "detachKeys" : "C-\\,C-q" to ~/.docker/config.json. If the file doesn't already exist, make it a root-level key in a simple hash, like:
+tl;dr Add "detachKeys" : "ctrl-\\,q" to ~/.docker/config.json. If the file doesn't already exist, make it a root-level key in a simple hash, like:
 
 ```
 {
-  "detachKeys" : "C-\\,C-q"
+  "detachKeys" : "ctrl-\\,q"
 }
 ```
 
-This will change the detach hotkey sequence to C-\ C-q.
+This will change the detach hotkey sequence to C-\ q.
 
 ## Workarounds
 
-Guest on another machine? Try starting/running the container docker with `--detachKeys="C-\\,C-p"`.
+Guest on another machine? Try starting/running the container docker with `--detachKeys="ctrl-\\,C-p"`.
 
 ## Coping
 
