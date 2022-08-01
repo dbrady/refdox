@@ -6,6 +6,7 @@ function gem_list {
     echo coderay \
          colorize \
          columnize \
+         debug \
          dicks \
          faraday \
          figlet \
