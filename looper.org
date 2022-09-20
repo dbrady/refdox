@@ -1,0 +1,93 @@
+One-Button Loopers: The Most Cryptic Dang Things
+
+Okay, these things are cryptic AF but once you realize it's basically just
+keeping track of a single working track and mixing that track down into a main
+track, it starts to make sense.
+
+The looper is extremely timing dependent, so it triggers on the leading edge of
+the first button press. Then it decides what to do if you continue to hold that
+press or let back up. If you tap and then quickly tap again, it stops the
+playback on the leading edge (because tap tap is "stop playback"), and only if
+you continue to hold the second tap does it to a full stop and erase.
+
+** In general the four actions are:
+
+TAP: Start/stop recording
+TAP TAP: Stop playback
+HOLD: Undo/Redo working track
+TAP HOLD: Stop and erase
+
+The looper is optimized for timing. It reacts instantly to the leading edge of
+the first click as a TAP. So a HOLD will actually look like a TAP when the
+button goes down, and then switch to the HOLD action when the button is held
+down. (Woof, this means the looper has to hold on to the previous working track
+and start recording the next one until the switch either goes up or gets held
+down long enough to trigger the hold action.) You can actually see the looper
+reacting and changing its mind.
+
+** OFF (LED: OFF)
+   - No main track
+   - No working track
+   - Not playing
+
+   TAP: Starts recording.
+
+   TAP TAP: Edge/error case. First tap starts recording, second tap turns the looper right back
+   off.
+
+   HOLD: n/a (No working track to undo/redo)
+
+   TAP HOLD: n/a (Nothing to erase, already stopped)
+
+** RECORD (LED: RED)
+   - If there is a main track, it will be playing.
+   - There is a working track, you are recording to it right now.
+   - If there is a main track, the looper knows how long the main loop is; if
+     you are recording a working track and go past this length, your working
+     track will begin playing back as well. Like a tape looper with no erase
+     head, the working track effectively mixes itself down to itself as you go
+     around the loop, so if you loop around n full loops and are some partial
+     value k around the current loop, you will be recording the k portion but
+     all n of the previous loops of the recording will be playing.
+
+   TAP: Stop recording. If there is no main track, the length of the loop is
+   fixed to the length of the working track.
+
+   TAP TAP: Stops recording and playback
+
+   HOLD: Stops recording and undoes working track. It can be restored later.
+
+   TAP HOLD: Stop and erase.
+
+** PLAY (LED: GREEN)
+
+   TAP: Playback does not stop. Previous working track is mixed into the main
+   track. Start recording a new working track.
+
+   TAP TAP: Stops playback.
+
+   HOLD: VERY state dependent!
+   If you have no main track (you have recorded the first working track but not
+   a second): Stops and erases.
+
+   Otherwise, the working track is toggled between on and off. if the working
+   track is currently playing, it is turned off, effectively "undoing" that
+   recording. But if the working track is already off, it will be turned on,
+   effectively "redoing" that track.
+
+   TAP HOLD: Stop and erase. (At the start of the first tap it starts
+   recording. At the start of the second tap, it returns to playback, but stops
+   playing. And after the hold goes long enough, it commits to the stop and
+   erase.
+
+** STOP (LED: BLINKING GREEN)
+
+   TAP: Resume playback.
+
+   TAP TAP: Nothing happens - remains in stop playback mode.
+
+   HOLD: Stops and erases. If you want to discard the working track without
+   losing the main track, you must TAP to resume playback instead. Then HOLD
+   will work the way that state describes.
+
+   TAP HOLD: Stops and erases
