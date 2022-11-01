@@ -7,12 +7,14 @@ function gem_list {
          colorize \
          columnize \
          debug \
+         deep_merge \
          dicks \
          faraday \
          figlet \
          json \
          lolcat \
          nyan \
+         optimist \
          pry \
          pry-byebug \
          rack \
