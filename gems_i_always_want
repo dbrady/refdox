@@ -1,7 +1,7 @@
 #!/bin/bash
 # this line worked when this was just a text file, but I reset ruby versions JUUUUST often enough
 # to make turning this into a script worth it
-# grep -v '#' gems_i_always_want.txt | xargs gem install
+# DON'T DO THIS THIS IS A SCRIPT JUST RUN IT grep -v '#' gems_i_always_want.txt | xargs gem install
 function gem_list {
     echo coderay \
          colorize \
