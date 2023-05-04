@@ -60,13 +60,21 @@ so that I have a reminder list next time.
 Note about Python: Just get latest; Python 3.7 is old enough that it literally
 has no compilation target for Apple Silicon.
 
-* `brew install python`
-* `brew install gdal` - geospatial, needed by our requirements.txt
-* `brew install figlet`
-* `brew install gpg`
-* `brew install ag`
-* `brew install tmux tmate`
-* `brew install colordiff`
+```bash
+brew install python
+brew install gdal
+brew install gpg
+brew install ag
+brew install colordiff
+brew install figlet
+brew install tmux tmate
+brew install watch
+brew install wget
+
+# Or try this:
+
+brew install ag colordiff figlet gdal gpg tmux tmate watch wget python
+```
 
 
 ## My Repos
