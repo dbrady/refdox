@@ -9,6 +9,7 @@ function gem_list {
          debug \
          deep_merge \
          dicks \
+         extralite \
          faraday \
          figlet \
          irb \
