@@ -1,32 +1,43 @@
-#!/bin/bash
-# this line worked when this was just a text file, but I reset ruby versions JUUUUST often enough
-# to make turning this into a script worth it
-# grep -v '#' gems_i_always_want.txt | xargs gem install
-function gem_list {
-    echo coderay \
-         colorize \
-         columnize \
-         debug \
-         deep_merge \
-         dicks \
-         extralite \
-         faraday \
-         figlet \
-         irb \
-         json \
-         lolcat \
-         nokogiri \
-         nyan \
-         optimist \
-         pry \
-         pry-byebug \
-         rack \
-         rake \
-         serve \
-         term-ansicolor \
-         text-table \
-         thin
-}
+#!/usr/bin/env ruby
+#
+# 2023-08-28 - I ported this to ruby. I originally thought it was important to
+# use bash and xargs for speed, but I don't use it often (quarterly at most?)
+# and it makes a 26 second script run in 18 seconds. (When all the gems are
+# already installed. Actual compilation is going to further elimintate the
+# already negligible performance increase here.) Also, TIL that when I see an
+# oddity in the compile logs, I would like to know which gem that oddity is
+# coming from.
+gem_list = %w(
+    coderay
+    colorize
+    columnize
+    debug
+    deep_merge
+    dicks
+    extralite
+    faraday
+    figlet
+    irb
+    json
+    lolcat
+    nokogiri
+    nyan
+    optimist
+    pry
+    pry-byebug
+    rack
+    rake
+    serve
+    term-ansicolor
+    text-table
+    thin
+)
 
-echo "gem_list | xargs gem install"
-gem_list | xargs gem install
+puts "\033[96;40m>> Installing the gems I always want...\033[96;0m"
+gem_list.each do |gem|
+    puts "\033[1;37;44m  #{gem.ljust(40)}\033[96;0m"
+    command = "gem install #{gem}"
+    puts "\033[36m#{command}\033[0m"
+    system command
+    puts
+end
