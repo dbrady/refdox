@@ -8,6 +8,7 @@
 # oddity in the compile logs, I would like to know which gem that oddity is
 # coming from.
 gem_list = %w(
+    clipboard
     coderay
     colorize
     columnize
@@ -27,7 +28,9 @@ gem_list = %w(
     pry-byebug
     rack
     rake
+    sequel
     serve
+    sqlite3
     term-ansicolor
     text-table
     thin
