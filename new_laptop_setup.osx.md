@@ -73,7 +73,19 @@ brew install wget
 
 # Or try this:
 
-brew install ag colordiff figlet gdal gpg tmux tmate watch wget python
+brew install
+ag
+bat
+colordiff
+figlet
+gdal
+gpg
+python
+tmate
+tmux
+watch
+wget
+
 ```
 
 
