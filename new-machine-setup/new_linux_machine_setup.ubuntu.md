@@ -1,4 +1,4 @@
-# New Laptop Setup (Ubuntu)
+# New Linux Machine Setup (Ubuntu)
 
 Last Updated On: 2026-10-15
 
