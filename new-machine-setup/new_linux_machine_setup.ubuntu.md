@@ -66,7 +66,24 @@ $ ruby ~/Documents/refdox/gems_i_always_want
 
 ### Python, Node, et al
 
-$ sudo apt install nodejs
+#### Node via nvm
+
+Use nvm, not `apt install nodejs`: some projects require nvm, and nvm can
+do everything apt's node does.
+
+--> go to https://github.com/nvm-sh/nvm and run the install script. Then:
+
+$ nvm install --lts
+$ nvm alias default 'lts/*'    # once; it persists in ~/.nvm/alias/default
+
+The installer appends an nvm block to ~/.bashrc. Delete it. ~/dotfiles/.bash_profile
+already sources nvm.sh, and these terminals start login shells, which never read
+.bashrc. (Any bash started from inside one already has node on PATH.)
+
+Do NOT put `nvm use` or `nvm alias` in a startup file. Both print a line on
+every new shell. nvm.sh already switches to the `default` alias silently when
+it loads. `NVM_SILENT=1` won't quiet them either, because `nvm use` declares
+its own `local NVM_SILENT` that hides the exported one.
 
 #### direnv + uv (Python projects, e.g. cadaver)
 
