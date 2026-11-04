@@ -34,6 +34,8 @@ gem_list = %w(
     term-ansicolor
     text-table
     thin
+    typhoeus
+    webrick
 )
 
 puts "\033[96;40m>> Installing the gems I always want...\033[96;0m"
